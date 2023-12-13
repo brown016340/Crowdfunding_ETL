@@ -16,8 +16,8 @@ CREATE TABLE campaign (
 	currency VARCHAR,
 	launch_date date,
 	end_date date,
-	Foreign Key category_id VARCHAR REFERENCES category(category_id),
-	Foreign Key subcategory_id REFERENCES subcategory(subcategory_id)VARCHAR
+	Foreign Key category_id REFERENCES category(category_id),
+	Foreign Key subcategory_id REFERENCES subcategory(subcategory_id)
 );
 
 CREATE TABLE category (
