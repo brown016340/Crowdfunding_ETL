@@ -1,46 +1,49 @@
 DROP TABLE IF EXISTS campaign,
                      category,
                      contacts,
-                     subcategory, 
-
-CREATE TABLE campaign (
-    Primary Key cf_id INT,
-	contact_id INT,
-	company_name VARCHAR,
-	description VARCHAR,
-	goal INT,
-	pledged INT,
-	outcome VARCHAR,
-	backers_count INT,
-	country VARCHAR,
-	currency VARCHAR,
-	launch_date date,
-	end_date date,
-	Foreign Key category_id REFERENCES category(category_id),
-	Foreign Key subcategory_id REFERENCES subcategory(subcategory_id)
-);
-
-Select * from campaign
+                     subcategory;
 
 CREATE TABLE category (
-    Primary Key category_id VARCHAR,
-	category VARCHAR
+    category_id INT PRIMARY KEY,
+    category VARCHAR
 );
 
-Select * from category
-
+-- Create table subcategory
 CREATE TABLE subcategory (
-    Primary Key subcategory_id VARCHAR,
-	subcategory VARCHAR
+    subcategory_id INT PRIMARY KEY,
+    subcategory VARCHAR
 );
 
-Select * from subcategory
-
+-- Create table contacts
 CREATE TABLE contacts (
-    Primary Key contact_id INT,
-	email VARCHAR,
-	first_name VARCHAR,
-	last_name VARCHAR
+    contact_id INT PRIMARY KEY,
+    email VARCHAR,
+    first_name VARCHAR,
+    last_name VARCHAR
 );
 
-Select * from contacts
+-- Create table campaign
+CREATE TABLE campaign (
+    cf_id INT PRIMARY KEY,
+    contact_id INT,
+    company_name VARCHAR,
+    description VARCHAR,
+    goal INT,
+    pledged INT,
+    outcome VARCHAR,
+    backers_count INT,
+    country VARCHAR,
+    currency VARCHAR,
+    launch_date DATE,
+    end_date DATE,
+    category_id INT,
+    subcategory_id INT,
+    FOREIGN KEY (category_id) REFERENCES category(category_id),
+    FOREIGN KEY (subcategory_id) REFERENCES subcategory(subcategory_id),
+    FOREIGN KEY (contact_id) REFERENCES contacts(contact_id)
+);
+
+SELECT * FROM category;
+SELECT * FROM subcategory;
+SELECT * FROM contacts;
+SELECT * FROM campaign;
