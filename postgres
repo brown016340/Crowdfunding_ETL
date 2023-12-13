@@ -20,15 +20,21 @@ CREATE TABLE campaign (
 	Foreign Key subcategory_id REFERENCES subcategory(subcategory_id)
 );
 
+Select * from campaign
+
 CREATE TABLE category (
     Primary Key category_id VARCHAR,
 	category VARCHAR
 );
 
+Select * from category
+
 CREATE TABLE subcategory (
     Primary Key subcategory_id VARCHAR,
 	subcategory VARCHAR
 );
+
+Select * from subcategory
 
 CREATE TABLE contacts (
     Primary Key contact_id INT,
@@ -36,3 +42,5 @@ CREATE TABLE contacts (
 	first_name VARCHAR,
 	last_name VARCHAR
 );
+
+Select * from contacts
