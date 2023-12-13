@@ -1,0 +1,38 @@
+DROP TABLE IF EXISTS campaign,
+                     category,
+                     contacts,
+                     subcategory, 
+
+CREATE TABLE campaign (
+    cf_id INT,
+	contact_id INT,
+	company_name VARCHAR,
+	description VARCHAR,
+	goal INT,
+	pledged INT,
+	outcome VARCHAR,
+	backers_count INT,
+	country VARCHAR,
+	currency VARCHAR,
+	launch_date date,
+	end_date date,
+	category_id VARCHAR,
+	subcategory_id VARCHAR
+);
+
+CREATE TABLE category (
+    category_id VARCHAR,
+	category VARCHAR
+);
+
+CREATE TABLE subcategory (
+    subcategory_id VARCHAR,
+	subcategory VARCHAR
+);
+
+CREATE TABLE contacts (
+    contact_id INT,
+	email VARCHAR,
+	first_name VARCHAR,
+	last_name VARCHAR
+);
