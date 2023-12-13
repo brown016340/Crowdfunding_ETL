@@ -4,7 +4,7 @@ DROP TABLE IF EXISTS campaign,
                      subcategory, 
 
 CREATE TABLE campaign (
-    cf_id INT,
+    Primary Key cf_id INT,
 	contact_id INT,
 	company_name VARCHAR,
 	description VARCHAR,
@@ -31,7 +31,7 @@ CREATE TABLE subcategory (
 );
 
 CREATE TABLE contacts (
-    contact_id INT,
+    Primary Key contact_id INT,
 	email VARCHAR,
 	first_name VARCHAR,
 	last_name VARCHAR
